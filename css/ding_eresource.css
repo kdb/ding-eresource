@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+
+body.page-e-resourcer .panel-threecol-left-stacked-right .panel-left { width: auto; }
+body.page-e-resourcer .panel-threecol-left-stacked-right .panel-middle { width: 510px; }
+body.page-e-resourcer .panel-threecol-left-stacked-right .panel-middle .panel-pane {padding: 20px; }
+
+.view-eresource-list .view-filters { float: right; }
+.view-eresource-list ul { clear: both; }

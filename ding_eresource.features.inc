@@ -32,3 +32,12 @@ function ding_eresource_node_info() {
   );
   return $items;
 }
+
+/**
+ * Implementation of hook_views_api().
+ */
+function ding_eresource_views_api() {
+  return array(
+    'api' => '2',
+  );
+}

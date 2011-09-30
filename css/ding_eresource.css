@@ -1,8 +1,20 @@
 @CHARSET "UTF-8";
 
+/**
+ * There is no resuable way of generating a tab layout and Dynamo 
+ * has too many fixed widths so we have to work with what we got.
+ */ 
 body.page-e-resourcer .panel-threecol-left-stacked-right .panel-left { width: auto; }
 body.page-e-resourcer .panel-threecol-left-stacked-right .panel-middle { width: 510px; }
 body.page-e-resourcer .panel-threecol-left-stacked-right .panel-middle .panel-pane {padding: 20px; }
 
+body.page-e-resourcer .tab-navigation-main { width: 510px; }
+
 .view-eresource-list .view-filters { float: right; }
 .view-eresource-list ul { clear: both; }
+
+.view-eresource-list li { padding: 10px 0; background: transparent url(../img/bg-divider.png) no-repeat left top; }
+.view-eresource-list li.first { padding-top: 0; background: none; }
+
+/* E-resource nodes */
+.node-eresource .logo { float: right; padding: 0 0 10px 10px; }

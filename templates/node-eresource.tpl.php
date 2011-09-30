@@ -36,20 +36,17 @@
 <?php else:
 //Content
 ?>
+  <?php if ($field_list_image) { ?>
+     <div class="logo">
+       <?php print $field_list_image[0]['view']; ?>
+     </div>
+  <?php } ?>
+
   <?php if($node->title){ ?>
     <h2><?php print $title;?></h2>
   <?php } ?>
 
-  <?php
-    // adding warning for event that has already occurred
-  if ($past_event): ?>
-    <div class="alert"><?php print t('NB! This event occurred in the past.'); ?></div>
-  <?php endif; ?>
-
   <div class="info">
-    <div class="meta">
-    </div>
-
     <?php print $content ?>
   </div>
 

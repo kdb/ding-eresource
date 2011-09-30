@@ -287,6 +287,9 @@ function ding_eresource_views_default_views() {
       ),
       'type' => 'select',
       'limit' => TRUE,
+      // We do not know what vid the eresource availability vocabulary will obtain
+      // so we need to retrieve it at runtime.
+      // Do not edit this!
       'vid' => variable_get('ding_eresource_eresource_availablity_vid', NULL),
       'id' => 'tid',
       'table' => 'term_node',
@@ -298,9 +301,6 @@ function ding_eresource_views_default_views() {
       'relationship' => 'none',
       'reduce_duplicates' => 0,
     ),
-  ));
-  $handler->override_option('cache', array(
-    'type' => 'none',
   ));
   $handler->override_option('use_pager', '1');
   $handler->override_option('row_plugin', 'node');

@@ -11,7 +11,7 @@ function ding_eresource_content_default_fields() {
     'field_name' => 'field_content_images',
     'type_name' => 'eresource',
     'display_settings' => array(
-      'weight' => '-3',
+      'weight' => '-2',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -94,9 +94,10 @@ function ding_eresource_content_default_fields() {
     'field_name' => 'field_link',
     'type_name' => 'eresource',
     'display_settings' => array(
+      'weight' => 0,
+      'parent' => '',
       'label' => array(
         'format' => 'above',
-        'exclude' => 0,
       ),
       'teaser' => array(
         'format' => 'default',
@@ -247,7 +248,7 @@ function ding_eresource_content_default_fields() {
     'field_name' => 'field_teaser',
     'type_name' => 'eresource',
     'display_settings' => array(
-      'weight' => '-1',
+      'weight' => '-4',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',

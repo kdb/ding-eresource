@@ -73,13 +73,13 @@ function ding_eresource_default_page_manager_handlers() {
       'links' => 0,
       'page' => 1,
       'no_extras' => 0,
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
-      'teaser' => 0,
       'identifier' => '',
       'link' => 0,
       'leave_node_title' => 1,
       'context' => 'argument_nid_1',
+      'build_mode' => 'full',
     );
     $pane->cache = array();
     $pane->style = array(

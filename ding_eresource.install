@@ -33,10 +33,10 @@ function ding_eresource_install() {
                 $v['name'], $v['help'], $v['relations'], $v['hierarchy'], $v['multiple'], $v['required'], $v['tags'],
                 'ding_resource', $v['weight']
               );
-      $vid = db_last_insert_id($variable_name, 'vid');
+      $vid = db_last_insert_id('vocabulary', 'vid');
 
       //Store the vid for future reference:
-      variable_set('ding_eresource_' . $key . '_vid', $vid);
+      variable_set($variable_name, $vid);
 
       db_query("INSERT INTO {vocabulary_node_types} (vid, type) VALUES (%d, '%s')",
       					$vid, 'eresource');

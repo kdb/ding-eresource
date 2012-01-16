@@ -11,7 +11,7 @@ function ding_eresource_content_default_fields() {
     'field_name' => 'field_content_images',
     'type_name' => 'eresource',
     'display_settings' => array(
-      'weight' => '-2',
+      'weight' => '1',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -82,10 +82,77 @@ function ding_eresource_content_default_fields() {
       'insert_class' => '',
       'insert_width' => '',
       'label' => 'Indholdsbilleder',
-      'weight' => 0,
+      'weight' => '1',
       'description' => 'Upload af billeder til indsættelse i brødteksten.',
       'type' => 'imagefield_widget',
       'module' => 'imagefield',
+    ),
+  );
+
+  // Exported field: field_ding_eresource_availabilit
+  $fields['eresource-field_ding_eresource_availabilit'] = array(
+    'field_name' => 'field_ding_eresource_availabilit',
+    'type_name' => 'eresource',
+    'display_settings' => array(
+      'weight' => '-2',
+      'parent' => '',
+      'label' => array(
+        'format' => 'inline',
+      ),
+      'teaser' => array(
+        'format' => 'hidden',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'mobile' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'content_taxonomy',
+    'required' => '1',
+    'multiple' => '0',
+    'module' => 'content_taxonomy',
+    'active' => '1',
+    'save_term_node' => 1,
+    'vid' => '7',
+    'parent' => '0',
+    'parent_php_code' => '',
+    'depth' => '',
+    'widget' => array(
+      'group_parent' => '0',
+      'show_depth' => 1,
+      'default_value' => array(
+        '0' => array(
+          'value' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Adgang',
+      'weight' => '-2',
+      'description' => '',
+      'type' => 'content_taxonomy_options',
+      'module' => 'content_taxonomy_options',
     ),
   );
 
@@ -94,13 +161,13 @@ function ding_eresource_content_default_fields() {
     'field_name' => 'field_link',
     'type_name' => 'eresource',
     'display_settings' => array(
-      'weight' => 0,
+      'weight' => '-3',
       'parent' => '',
       'label' => array(
         'format' => 'inline',
       ),
       'teaser' => array(
-        'format' => 'default',
+        'format' => 'hidden',
         'exclude' => 0,
       ),
       'full' => array(
@@ -165,7 +232,7 @@ function ding_eresource_content_default_fields() {
     'field_name' => 'field_list_image',
     'type_name' => 'eresource',
     'display_settings' => array(
-      'weight' => '-1',
+      'weight' => '2',
       'parent' => '',
       'label' => array(
         'format' => 'hidden',
@@ -236,7 +303,7 @@ function ding_eresource_content_default_fields() {
       'insert_class' => '',
       'insert_width' => '',
       'label' => 'Logo',
-      'weight' => '1',
+      'weight' => '2',
       'description' => 'Logo og billede til brug i indholdslister. Dette billede beskæres automatisk til at være kvadratisk, 120x120 pixels.',
       'type' => 'imagefield_widget',
       'module' => 'imagefield',
@@ -308,6 +375,7 @@ function ding_eresource_content_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Adgang');
   t('Indholdsbilleder');
   t('Link');
   t('Logo');

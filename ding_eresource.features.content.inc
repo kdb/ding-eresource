@@ -97,7 +97,7 @@ function ding_eresource_content_default_fields() {
       'weight' => '-2',
       'parent' => '',
       'label' => array(
-        'format' => 'inline',
+        'format' => 'above',
       ),
       'teaser' => array(
         'format' => 'hidden',
@@ -164,7 +164,7 @@ function ding_eresource_content_default_fields() {
       'weight' => '-3',
       'parent' => '',
       'label' => array(
-        'format' => 'inline',
+        'format' => 'above',
       ),
       'teaser' => array(
         'format' => 'hidden',
@@ -201,16 +201,15 @@ function ding_eresource_content_default_fields() {
       'target' => 'default',
       'rel' => '',
       'class' => '',
-      'title' => '',
     ),
     'display' => array(
       'url_cutoff' => '80',
     ),
     'url' => 0,
-    'title' => 'optional',
+    'title' => '',
     'title_value' => '',
     'enable_tokens' => 0,
-    'validate_url' => 1,
+    'validate_url' => '',
     'widget' => array(
       'default_value' => array(
         '0' => array(
@@ -264,7 +263,7 @@ function ding_eresource_content_default_fields() {
     ),
     'widget_active' => '1',
     'type' => 'filefield',
-    'required' => '1',
+    'required' => '0',
     'multiple' => '0',
     'module' => 'filefield',
     'active' => '1',

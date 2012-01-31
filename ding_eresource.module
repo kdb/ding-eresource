@@ -33,7 +33,7 @@ function ding_eresource_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL) {
       l(t('Home'), '<front>'),
     );
 
-    $trail[] = l(t('E-resourcer'), 'e-resourcer');
+    $trail[] = l(t('E-resurser'), 'e-resurser');
 
     drupal_set_breadcrumb($trail);
   }

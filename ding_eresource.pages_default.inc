@@ -155,7 +155,7 @@ function ding_eresource_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'E-Resources overview page';
   $page->admin_description = 'Provides a list of all coming events – with filters and stuff like that.';
-  $page->path = 'e-resourcer/!tid';
+  $page->path = 'e-resurser/!tid';
   $page->access = array(
     'plugins' => array(
       0 => array(
@@ -172,7 +172,7 @@ function ding_eresource_default_page_manager_pages() {
   );
   $page->menu = array(
     'type' => 'normal',
-    'title' => 'E-resourcer',
+    'title' => 'E-resurser',
     'name' => 'primary-links',
     'weight' => '0',
     'parent' => array(
@@ -232,7 +232,7 @@ function ding_eresource_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'E-resourcer';
+  $display->title = 'E-resurser';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass;

@@ -211,11 +211,12 @@ function ding_eresource_default_page_manager_pages() {
   $handler->weight = 1;
   $handler->conf = array(
     'title' => 'Panel',
-    'no_blocks' => FALSE,
-    'css_id' => '',
+    'no_blocks' => 0,
+    'css_id' => 'eresource-page',
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
+    'pipeline' => 'standard',
   );
   $display = new panels_display;
   $display->layout = 'threecol_left_stacked_right';

@@ -1,14 +1,13 @@
 @CHARSET "UTF-8";
 
 /**
- * There is no resuable way of generating a tab layout and Dynamo 
+ * There is no resuable way of generating a tab layout and Dynamo
  * has too many fixed widths so we have to work with what we got.
- */ 
-body.page-e-resourcer .panel-threecol-left-stacked-right .panel-left { width: auto; }
-body.page-e-resourcer .panel-threecol-left-stacked-right .panel-middle { width: 510px; }
-body.page-e-resourcer .panel-threecol-left-stacked-right .panel-middle .panel-pane {padding: 20px; }
-
-body.page-e-resourcer .tab-navigation-main { width: 510px; }
+ */
+#eresource-page .panel-left { width: auto; }
+#eresource-page .panel-middle { width: 510px; }
+#eresource-page .panel-middle .panel-pane { padding: 20px; }
+#eresource-page .tab-navigation-main { width: 510px; }
 
 .view-eresource-list .view-filters { float: right; }
 .view-eresource-list ul { clear: both; }

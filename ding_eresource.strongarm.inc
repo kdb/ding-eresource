@@ -102,16 +102,16 @@ function ding_eresource_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'content_extra_weights_eresource';
   $strongarm->value = array(
-    'title' => '-5',
-    'body_field' => '0',
-    'revision_information' => '5',
-    'author' => '4',
-    'options' => '6',
-    'comment_settings' => '9',
-    'menu' => '3',
-    'taxonomy' => '-1',
-    'path' => '7',
-    'path_redirect' => '8',
+    'title' => '4',
+    'body_field' => '9',
+    'revision_information' => '14',
+    'author' => '13',
+    'options' => '15',
+    'comment_settings' => '18',
+    'menu' => '12',
+    'taxonomy' => '8',
+    'path' => '16',
+    'path_redirect' => '17',
   );
   $export['content_extra_weights_eresource'] = $strongarm;
 

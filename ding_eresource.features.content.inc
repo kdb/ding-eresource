@@ -11,33 +11,37 @@ function ding_eresource_content_default_fields() {
     'field_name' => 'field_content_images',
     'type_name' => 'eresource',
     'display_settings' => array(
-      'weight' => '1',
+      'weight' => '10',
       'parent' => '',
+      'mobile' => array(
+        'format' => 'default',
+        'exclude' => 1,
+      ),
+      'token' => array(
+        'format' => 'image_plain',
+        'exclude' => 1,
+      ),
+      '2' => array(
+        'format' => 'image_plain',
+        'exclude' => 1,
+      ),
+      '3' => array(
+        'format' => 'image_plain',
+        'exclude' => 1,
+      ),
+      '4' => array(
+        'format' => 'image_plain',
+        'exclude' => 1,
+      ),
       'label' => array(
         'format' => 'hidden',
       ),
       'teaser' => array(
         'format' => 'hidden',
-        'exclude' => 0,
+        'exclude' => 1,
       ),
       'full' => array(
         'format' => 'hidden',
-        'exclude' => 0,
-      ),
-      '4' => array(
-        'format' => 'image_plain',
-        'exclude' => 0,
-      ),
-      '2' => array(
-        'format' => 'image_plain',
-        'exclude' => 0,
-      ),
-      '3' => array(
-        'format' => 'image_plain',
-        'exclude' => 0,
-      ),
-      'token' => array(
-        'format' => 'image_plain',
         'exclude' => 0,
       ),
     ),
@@ -82,7 +86,7 @@ function ding_eresource_content_default_fields() {
       'insert_class' => '',
       'insert_width' => '',
       'label' => 'Indholdsbilleder',
-      'weight' => '1',
+      'weight' => '10',
       'description' => 'Upload af billeder til indsættelse i brødteksten.',
       'type' => 'imagefield_widget',
       'module' => 'imagefield',
@@ -94,20 +98,13 @@ function ding_eresource_content_default_fields() {
     'field_name' => 'field_ding_eresource_availabilit',
     'type_name' => 'eresource',
     'display_settings' => array(
-      'weight' => '-2',
+      'weight' => '7',
       'parent' => '',
-      'label' => array(
-        'format' => 'above',
-      ),
-      'teaser' => array(
-        'format' => 'hidden',
-        'exclude' => 0,
-      ),
-      'full' => array(
+      'mobile' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
-      '4' => array(
+      'token' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
@@ -119,11 +116,18 @@ function ding_eresource_content_default_fields() {
         'format' => 'default',
         'exclude' => 0,
       ),
-      'mobile' => array(
+      '4' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
-      'token' => array(
+      'label' => array(
+        'format' => 'inline',
+      ),
+      'teaser' => array(
+        'format' => 'hidden',
+        'exclude' => 1,
+      ),
+      'full' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
@@ -149,10 +153,88 @@ function ding_eresource_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Adgang',
-      'weight' => '-2',
+      'weight' => '7',
       'description' => '',
       'type' => 'content_taxonomy_options',
       'module' => 'content_taxonomy_options',
+    ),
+  );
+
+  // Exported field: field_file_attachments
+  $fields['eresource-field_file_attachments'] = array(
+    'field_name' => 'field_file_attachments',
+    'type_name' => 'eresource',
+    'display_settings' => array(
+      'weight' => '11',
+      'parent' => '',
+      'mobile' => array(
+        'format' => 'default',
+        'exclude' => 1,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 1,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 1,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 1,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 1,
+      ),
+      'label' => array(
+        'format' => 'above',
+      ),
+      'teaser' => array(
+        'format' => 'hidden',
+        'exclude' => 1,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'filefield',
+    'required' => '0',
+    'multiple' => '1',
+    'module' => 'filefield',
+    'active' => '1',
+    'list_field' => '1',
+    'list_default' => 1,
+    'description_field' => '1',
+    'widget' => array(
+      'file_extensions' => 'txt pdf',
+      'file_path' => 'file_attachments/[date-in-tz]',
+      'progress_indicator' => 'bar',
+      'max_filesize_per_file' => '',
+      'max_filesize_per_node' => '',
+      'insert' => 0,
+      'insert_styles' => array(
+        'auto' => 0,
+        'link' => 0,
+        'image' => 0,
+        'imagecache_80_x' => 0,
+        'imagecache_120_120' => 0,
+        'imagecache_180_x' => 0,
+        'imagecache_460_240_crop' => 0,
+        'imagecache_680_200_crop' => 0,
+        'imagecache_mobile-list-image' => 0,
+        'imagecache_ting_search_carousel' => 0,
+      ),
+      'insert_default' => 'auto',
+      'insert_class' => '',
+      'insert_width' => '',
+      'label' => 'Vedhæftede filer',
+      'weight' => '11',
+      'description' => '',
+      'type' => 'filefield_widget',
+      'module' => 'filefield',
     ),
   );
 
@@ -161,20 +243,13 @@ function ding_eresource_content_default_fields() {
     'field_name' => 'field_link',
     'type_name' => 'eresource',
     'display_settings' => array(
-      'weight' => '-3',
+      'weight' => '6',
       'parent' => '',
-      'label' => array(
-        'format' => 'above',
-      ),
-      'teaser' => array(
-        'format' => 'hidden',
-        'exclude' => 0,
-      ),
-      'full' => array(
+      'mobile' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
-      '4' => array(
+      'token' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
@@ -186,7 +261,18 @@ function ding_eresource_content_default_fields() {
         'format' => 'default',
         'exclude' => 0,
       ),
-      'token' => array(
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'label' => array(
+        'format' => 'inline',
+      ),
+      'teaser' => array(
+        'format' => 'hidden',
+        'exclude' => 1,
+      ),
+      'full' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
@@ -201,15 +287,16 @@ function ding_eresource_content_default_fields() {
       'target' => 'default',
       'rel' => '',
       'class' => '',
+      'title' => '',
     ),
     'display' => array(
       'url_cutoff' => '80',
     ),
     'url' => 0,
-    'title' => '',
+    'title' => 'optional',
     'title_value' => '',
     'enable_tokens' => 0,
-    'validate_url' => '',
+    'validate_url' => 1,
     'widget' => array(
       'default_value' => array(
         '0' => array(
@@ -219,7 +306,7 @@ function ding_eresource_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Link',
-      'weight' => '-3',
+      'weight' => '6',
       'description' => '',
       'type' => 'link',
       'module' => 'link',
@@ -231,20 +318,13 @@ function ding_eresource_content_default_fields() {
     'field_name' => 'field_list_image',
     'type_name' => 'eresource',
     'display_settings' => array(
-      'weight' => '2',
+      'weight' => '3',
       'parent' => '',
-      'label' => array(
-        'format' => 'hidden',
-      ),
-      'teaser' => array(
+      'mobile' => array(
         'format' => '120_120_default',
         'exclude' => 0,
       ),
-      'full' => array(
-        'format' => 'hidden',
-        'exclude' => 0,
-      ),
-      '4' => array(
+      'token' => array(
         'format' => 'image_plain',
         'exclude' => 0,
       ),
@@ -256,14 +336,25 @@ function ding_eresource_content_default_fields() {
         'format' => 'image_plain',
         'exclude' => 0,
       ),
-      'token' => array(
+      '4' => array(
         'format' => 'image_plain',
+        'exclude' => 0,
+      ),
+      'label' => array(
+        'format' => 'hidden',
+      ),
+      'teaser' => array(
+        'format' => '120_120_default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'hidden',
         'exclude' => 0,
       ),
     ),
     'widget_active' => '1',
     'type' => 'filefield',
-    'required' => '0',
+    'required' => '1',
     'multiple' => '0',
     'module' => 'filefield',
     'active' => '1',
@@ -302,7 +393,7 @@ function ding_eresource_content_default_fields() {
       'insert_class' => '',
       'insert_width' => '',
       'label' => 'Logo',
-      'weight' => '2',
+      'weight' => '3',
       'description' => 'Logo og billede til brug i indholdslister. Dette billede beskæres automatisk til at være kvadratisk, 120x120 pixels.',
       'type' => 'imagefield_widget',
       'module' => 'imagefield',
@@ -314,16 +405,9 @@ function ding_eresource_content_default_fields() {
     'field_name' => 'field_teaser',
     'type_name' => 'eresource',
     'display_settings' => array(
-      'weight' => '-4',
+      'weight' => '5',
       'parent' => '',
-      'label' => array(
-        'format' => 'hidden',
-      ),
-      'teaser' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      'full' => array(
+      'mobile' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
@@ -340,6 +424,17 @@ function ding_eresource_content_default_fields() {
         'exclude' => 0,
       ),
       '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'label' => array(
+        'format' => 'hidden',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
         'format' => 'default',
         'exclude' => 0,
       ),
@@ -365,7 +460,7 @@ function ding_eresource_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Smagsprøve',
-      'weight' => '-4',
+      'weight' => '5',
       'description' => '',
       'type' => 'text_textfield',
       'module' => 'text',
@@ -379,6 +474,7 @@ function ding_eresource_content_default_fields() {
   t('Link');
   t('Logo');
   t('Smagsprøve');
+  t('Vedhæftede filer');
 
   return $fields;
 }

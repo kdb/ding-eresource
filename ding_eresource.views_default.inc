@@ -173,7 +173,7 @@ function ding_eresource_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'rules',
   ));
-  $handler->override_option('title', 'E-resourcer');
+  $handler->override_option('title', 'E-resurser');
   $handler->override_option('empty', 'Ingen kommende arrangementer.');
   $handler->override_option('empty_format', '1');
   $handler->override_option('use_pager', '0');
@@ -315,7 +315,7 @@ function ding_eresource_views_default_views() {
     'links' => 1,
     'comments' => 0,
   ));
-  $handler->override_option('pane_title', 'E-resourcer');
+  $handler->override_option('pane_title', 'E-resurser');
   $handler->override_option('pane_description', '');
   $handler->override_option('pane_category', array(
     'name' => 'View panes',

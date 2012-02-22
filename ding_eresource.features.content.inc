@@ -148,7 +148,7 @@ function ding_eresource_content_default_fields() {
       'show_depth' => 1,
       'default_value' => array(
         '0' => array(
-          'value' => '',
+          'value' => NULL,
         ),
       ),
       'default_value_php' => NULL,

@@ -301,5 +301,21 @@ function ding_eresource_strongarm() {
   $strongarm->value = 0;
   $export['scheduler_unpublish_revision_eresource'] = $strongarm;
 
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'weight_label';
+  $strongarm->value = 'Vægtning';
+  $export['weight_label'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'weight_node_types';
+  $strongarm->value = array(
+    'eresource' => 'eresource',
+  );
+  $export['weight_node_types'] = $strongarm;
+
   return $export;
 }

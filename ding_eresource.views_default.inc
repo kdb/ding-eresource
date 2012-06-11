@@ -127,6 +127,13 @@ function ding_eresource_views_default_views() {
     ),
   ));
   $handler->override_option('sorts', array(
+    'weight' => array(
+      'order' => 'ASC',
+      'id' => 'weight',
+      'table' => 'node_weight',
+      'field' => 'weight',
+      'relationship' => 'none',
+    ),
     'title' => array(
       'order' => 'ASC',
       'id' => 'title',

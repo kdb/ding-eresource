@@ -1,18 +1,22 @@
 <?php
+/**
+ * @file
+ * E-resource content type and Views for Ding!
+ */
 
 /**
- * Implementation of hook_init().
+ * Implements hook_init().
  */
 function ding_eresource_init() {
-  //Add our own stylesheet
+  // Add our own stylesheet.
   drupal_add_css(drupal_get_path('module', 'ding_eresource') . '/css/ding_eresource.css');
 }
 
 /**
- * Implementation of hook_theme_registry_alter.
+ * Implements hook_theme_registry_alter().
  */
 function ding_eresource_theme_registry_alter(&$theme_registry) {
-  //We provide our own node templatesso look here as well
+  // We provide our own node templates, so look here as well.
   $theme_path = drupal_get_path('module', 'ding_eresource') . '/templates';
   $theme_hooks = array('node');
   foreach ($theme_hooks as $hook) {
@@ -21,12 +25,12 @@ function ding_eresource_theme_registry_alter(&$theme_registry) {
 }
 
 /**
- * Implementation of hook_nodeapi().
+ * Implements hook_nodeapi().
  */
 function ding_eresource_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL) {
-  // Set default breadcrumb if
-  // - viewing a e-resource node
-  // - on a page by itself
+  // Set default breadcrumb if:
+  // - viewing a e-resource node.
+  // - on a page by itself.
   if (($node->type == 'eresource') &&
       ($op == 'view') && !$a3 && $a4) {
     $trail = array(
@@ -39,18 +43,22 @@ function ding_eresource_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL) {
   }
 }
 
+/**
+ * Preprocess variables for the node template.
+ */
 function ding_eresource_preprocess_node(&$vars) {
-  // Link from the logo image to the resource
+  // Link from the logo image to the resource.
   if (isset($vars['field_list_image'][0]) && isset($vars['field_link'][0]['url'])) {
     $vars['field_list_image'][0]['view'] = l(
       theme('imagecache', '120_120', $vars['field_list_image'][0]['filepath']),
-      $vars['field_link'][0]['url'],
-      array('html' => true,
-            'attributes' => array(
-            	'title' => t('Go to !eresource_name', array('!eresource_name' => ($vars['field_link'][0]['title']) ? $vars['field_link'][0]['title'] : $vars['node']->title)))
-            )
-      );
+      $vars['field_link'][0]['url'], array(
+        'html' => TRUE,
+        'attributes' => array(
+          'title' => t('Go to !eresource_name', array('!eresource_name' => ($vars['field_link'][0]['title']) ? $vars['field_link'][0]['title'] : $vars['node']->title)),
+        ),
+      )
+    );
   }
 }
 
-include_once('ding_eresource.features.inc');
+include_once 'ding_eresource.features.inc';

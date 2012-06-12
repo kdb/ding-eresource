@@ -155,7 +155,7 @@ function ding_eresource_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'E-Resources overview page';
   $page->admin_description = 'Provides a list of all coming events – with filters and stuff like that.';
-  $page->path = 'e-resurser/!tid';
+  $page->path = 'e-resurser/!tid/!letter';
   $page->access = array(
     'plugins' => array(
       0 => array(
@@ -185,17 +185,18 @@ function ding_eresource_default_page_manager_pages() {
   $page->arguments = array(
     'tid' => array(
       'id' => 1,
-      'identifier' => 'E-resource category',
-      'name' => 'term',
+      'identifier' => 'Term ID/wildcard',
+      'name' => 'string',
       'settings' => array(
-        'input_form' => 'tid',
-        'vids' => array(
-          // We do not know what vid the eresource category vocabulary will obtain
-          // so we need to retrieve it at runtime.
-          // Do not edit this!
-          variable_get('ding_eresource_eresource_category_vid', NULL) => variable_get('ding_eresource_eresource_category_vid', NULL),
-        ),
-        'breadcrumb' => 1,
+        'use_tail' => 0,
+      ),
+    ),
+    'letter' => array(
+      'id' => 2,
+      'identifier' => 'Initial letter',
+      'name' => 'string',
+      'settings' => array(
+        'use_tail' => 0,
       ),
     ),
   );
@@ -272,7 +273,8 @@ function ding_eresource_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'context' => array(
-        0 => 'argument_term_1',
+        0 => 'argument_string_1',
+        1 => 'argument_string_2',
       ),
     );
     $pane->cache = array();
@@ -311,8 +313,8 @@ function ding_eresource_default_page_manager_pages() {
     $pane->position = 0;
     $display->content['new-3'] = $pane;
     $display->panels['right'][0] = 'new-3';
-  $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = '0';
+  $display->hide_title = PANELS_TITLE_PANE;
+  $display->title_pane = 'new-2';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['eresources_overview'] = $page;

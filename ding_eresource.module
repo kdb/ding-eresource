@@ -5,11 +5,32 @@
  */
 
 /**
+ * Implements hook_menu().
+ */
+function ding_eresource_menu() {
+  return array(
+    'admin/settings/ding/eresource/header' => array(
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('ding_eresource_header_text_edit_form'),
+      'access arguments' => array('edit e-resource header texts'),
+      'file' => 'ding_eresource.pages.inc',
+    ),
+  );
+}
+
+/**
  * Implements hook_init().
  */
 function ding_eresource_init() {
   // Add our own stylesheet.
   drupal_add_css(drupal_get_path('module', 'ding_eresource') . '/css/ding_eresource.css');
+}
+
+/**
+ * Implements hook_perm().
+ */
+function ding_eresource_perm() {
+  return array('edit e-resource header texts');
 }
 
 /**
@@ -55,6 +76,15 @@ function ding_eresource_ctools_plugin_directory($module, $plugin) {
 }
 
 /**
+ * Implements hook_views_pre_render().
+ */
+function ding_eresource_views_pre_render(&$view) {
+  if ($view->name == 'eresource_list' && $view->current_display == 'panel_pane_1') {
+    $view->attachment_before = ding_eresource_header_text($view->args) . $view->attachment_before;
+  }
+}
+
+/**
  * Preprocess variables for the node template.
  */
 function ding_eresource_preprocess_node(&$vars) {
@@ -69,6 +99,34 @@ function ding_eresource_preprocess_node(&$vars) {
         ),
       )
     );
+  }
+}
+
+/**
+ * Get context-sensitive header text for the e-resource view.
+ *
+ * @param array $args
+ *   The arguments presented to the View instance.
+ *
+ * @return string
+ *   The header text, rendered as HTML.
+ */
+function ding_eresource_header_text($args) {
+  // Currently, only the first argument is used.
+  $args = array_slice($args, 0, 1);
+
+  // This could probably do with its own table instead of abusing the
+  // variables system.
+  $text = variable_get('ding_eresource_header_text_' . implode('_', $args), NULL);
+
+  if (empty($text)) {
+    $text = variable_get('ding_eresource_header_text_default', NULL);
+  }
+
+  dpm($text);
+
+  if (!empty($text)) {
+    return check_markup($text['value'], $text['format']);
   }
 }
 

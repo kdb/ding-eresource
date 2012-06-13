@@ -59,4 +59,19 @@ function ding_eresource_install() {
     "INSERT INTO {vocabulary_node_types} (vid, type) VALUES (%d, '%s')",
     2, 'eresource'
   );
+
+  // This module needs to be "heavier" than Views, since it redefines
+  // Views templates.
+  db_query("UPDATE {system} SET weight = 11 WHERE name = 'ding_eresource'");
+}
+
+/**
+ * Make this module "heavier" than Views so we can override its templates.
+ */
+function ding_eresource_update_6101() {
+  $ret = array();
+
+  $ret[] = update_sql("UPDATE {system} SET weight = 11 WHERE name = 'ding_eresource'");
+
+  return $ret;
 }

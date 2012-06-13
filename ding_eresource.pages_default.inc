@@ -250,15 +250,12 @@ function ding_eresource_default_page_manager_pages() {
       'vocabulary' =>  variable_get('ding_eresource_eresource_category_vid', NULL),
       'override_title' => 0,
       'override_title_text' => '',
-      'context' => 'argument_term_1',
     );
     $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
+    $pane->style = array();
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'tab-navigation ',
+      'css_class' => 'tab-navigation',
     );
     $pane->extras = array();
     $pane->position = 0;

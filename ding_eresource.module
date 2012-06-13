@@ -55,28 +55,6 @@ function ding_eresource_ctools_plugin_directory($module, $plugin) {
 }
 
 /**
- * Implements hook_views_pre_view().
- */
-function ding_eresource_views_pre_view(&$view, &$display_id, &$args) {
-  if ($view->name == 'eresource_list' && $display_id == 'panel_pane_1') {
-    // Use an empty argument insteald of the wildcard value, so it
-    // doesn't trigger title rewriting.
-    if ($args[0] == 'alle') {
-      $args[0] = NULL;
-    }
-
-    // Modify the second argument to be nothing if it's not a single letter.
-    if (isset($args[1]) && !preg_match('/^\w$/', $args[1])) {
-      dpm('hepss');
-      $args[1] = NULL;
-    }
-
-    // Fix the path as the base path if neither argument has a value.
-    $view->override_path = 'e-resurser' . implode('/', array_filter($args));
-  }
-}
-
-/**
  * Preprocess variables for the node template.
  */
 function ding_eresource_preprocess_node(&$vars) {

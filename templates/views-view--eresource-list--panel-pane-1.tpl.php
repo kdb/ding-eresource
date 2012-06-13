@@ -40,16 +40,15 @@
     </div>
   <?php endif; ?>
 
-  <?php if ($exposed): ?>
-    <div class="view-filters">
-      <?php print $exposed; ?>
+  <?php if ($attachment_before): ?>
+    <div class="attachment attachment-before">
+      <?php print $attachment_before; ?>
     </div>
   <?php endif; ?>
 
-  <?php if ($attachment_before): ?>
-    <h1>Inception</h1>
-    <div class="attachment attachment-before">
-      <?php print $attachment_before; ?>
+  <?php if ($exposed): ?>
+    <div class="view-filters">
+      <?php print $exposed; ?>
     </div>
   <?php endif; ?>
 

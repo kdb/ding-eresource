@@ -8,11 +8,13 @@
  * Implements of hook_install().
  */
 function ding_eresource_install() {
+  $t = get_t();
+
   // Configuration for the e-resource specific vocabularies.
   $vocabularies = array(
     'eresource_category' => array(
-      'name' => st('E-Resource category'),
-      'help' => st('Pick a category for the e-resource'),
+      'name' => $t('E-Resource category'),
+      'help' => $t('Pick a category for the e-resource'),
       'relations' => 1,
       'hierarchy' => 0,
       'multiple' => 1,
@@ -21,8 +23,8 @@ function ding_eresource_install() {
       'weight' => -5,
     ),
     'eresource_availablity' => array(
-      'name' => st('E-Resource availability'),
-      'help' => st('Where/how can the e-resource be accessed?'),
+      'name' => $t('E-Resource availability'),
+      'help' => $t('Where/how can the e-resource be accessed?'),
       'relations' => 1,
       'hierarchy' => 0,
       'multiple' => 0,

@@ -43,12 +43,16 @@ function ding_eresource_header_text_edit_form_submit(&$form, &$form_state) {
       variable_set('ding_eresource_header_text_' . $key, $element);
     }
   }
+
+  // Clear the cached output of the views, so our changes will appear
+  // immediately, so the user is not confused.
+  cache_clear_all('eresource_list:panel_pane_1:output:', 'cache_views_data', TRUE);
 }
 
 /**
  * Generate a text editing fieldset for our form.
  *
- * It's really sille that core doesn't ship with a standard textarea +
+ * It's really silly that core doesn't ship with a standard textarea +
  * input format selector widget, so we have to define our own.
  */
 function _ding_eresource_pages_header_text_edit_element($key, $title) {

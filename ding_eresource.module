@@ -10,6 +10,7 @@
 function ding_eresource_menu() {
   return array(
     'admin/settings/ding/eresource/header' => array(
+      'title' => 'e-resource header texts',
       'page callback' => 'drupal_get_form',
       'page arguments' => array('ding_eresource_header_text_edit_form'),
       'access arguments' => array('edit e-resource header texts'),

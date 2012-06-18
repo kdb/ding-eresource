@@ -139,7 +139,7 @@ function ding_eresource_header_text($args) {
   }
 
   if (!empty($text)) {
-    return check_markup($text['value'], $text['format']);
+    return check_markup($text['value'], $text['format'], FALSE);
   }
 }
 

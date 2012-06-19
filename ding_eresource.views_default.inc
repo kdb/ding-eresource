@@ -181,6 +181,8 @@ function ding_eresource_views_default_views() {
     'type' => 'rules',
   ));
   $handler->override_option('title', 'E-resurser');
+  $handler->override_option('header_format', '1');
+  $handler->override_option('header_empty', 0);
   $handler->override_option('empty', 'Ingen e-resurser matcher de valgte kriterier.');
   $handler->override_option('empty_format', '1');
   $handler->override_option('use_pager', '0');
@@ -580,6 +582,7 @@ function ding_eresource_views_default_views() {
       ),
     ),
   ));
+  $handler->override_option('empty', '');
   $handler->override_option('attachment_position', 'before');
   $handler->override_option('inherit_arguments', 0);
   $handler->override_option('inherit_exposed_filters', FALSE);

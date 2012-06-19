@@ -89,6 +89,18 @@ function ding_eresource_ctools_plugin_directory($module, $plugin) {
     return 'plugins/' . $plugin;
   }
 }
+/**
+ * Implements hook_views_pre_view().
+ */
+function ding_eresource_views_pre_view(&$view, &$display_id, &$args) {
+  if ($view->name == 'eresource_list' && $display_id == 'attachment_1') {
+    // Prevent rendering alphabetical index if we're already filtered by
+    // category, since both filters do not work well together.
+    if (!empty($view->original_args[0]) && is_numeric($view->original_args[0])) {
+      $view->executed = TRUE;
+    }
+  }
+}
 
 /**
  * Implements hook_views_pre_render().

@@ -41,6 +41,7 @@
   padding: 1px 4px;
 }
 
+.view-eresource-list .attachment-before .views-summary li a.active,
 .view-eresource-list .attachment-before .views-summary li a:hover {
   background-color: white;
   color: #aaa;

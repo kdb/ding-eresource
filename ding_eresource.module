@@ -76,6 +76,13 @@ function ding_eresource_theme($existing) {
       'original hook' => 'views_view',
       'path' => drupal_get_path('module', 'ding_eresource') . '/templates',
     ),
+    'views_view_summary__eresource_list__attachment_1' => array(
+      'arguments' => array('view' => NULL, 'options' => NULL, 'rows' => NULL, 'title' => NULL),
+      'template' => 'views-view-summary--eresource-list--attachment-1',
+      'original hook' => 'views_view_summary',
+      'path' => drupal_get_path('module', 'ding_eresource') . '/templates',
+    ),
+
   );
 }
 

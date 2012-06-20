@@ -582,6 +582,9 @@ function ding_eresource_views_default_views() {
       ),
     ),
   ));
+  $handler->override_option('cache', array(
+    'type' => 'none',
+  ));
   $handler->override_option('empty', '');
   $handler->override_option('attachment_position', 'before');
   $handler->override_option('inherit_arguments', 0);

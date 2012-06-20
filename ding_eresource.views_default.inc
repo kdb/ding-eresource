@@ -200,7 +200,7 @@ function ding_eresource_views_default_views() {
       'style_options' => array(),
       'wildcard' => 'alle',
       'wildcard_substitution' => 'alle',
-      'title' => 'E-resurser i kategorien %1',
+      'title' => '%1',
       'breadcrumb' => '',
       'default_argument_type' => 'fixed',
       'default_argument' => '',

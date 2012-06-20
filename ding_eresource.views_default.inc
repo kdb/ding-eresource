@@ -185,6 +185,7 @@ function ding_eresource_views_default_views() {
   $handler->override_option('header_empty', 0);
   $handler->override_option('empty', 'Ingen e-resurser matcher de valgte kriterier.');
   $handler->override_option('empty_format', '1');
+  $handler->override_option('use_ajax', TRUE);
   $handler->override_option('use_pager', '0');
   $handler->override_option('style_plugin', 'list');
   $handler->override_option('style_options', array(

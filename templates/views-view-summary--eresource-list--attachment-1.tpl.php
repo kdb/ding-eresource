@@ -11,7 +11,7 @@
 if (!empty($view->original_args[1])) {
   $letter = drupal_strtoupper($view->original_args[1]); 
   
-  foreach ($rows as $id => $row) {
+  foreach ($rows as $id => &$row) {
     if ($row->link === $letter) {
       if (isset($classes[$id])) {
         $classes[$id] .= ' active';
@@ -19,6 +19,11 @@ if (!empty($view->original_args[1])) {
       else {
         $classes[$id] = 'active';
       }
+    }
+
+    // Remove availablility filter from URLs. 
+    if ($pos = strpos($row->url, '?availability')) {
+      $row->url = substr($row->url, 0, $pos);
     }
   }
 }

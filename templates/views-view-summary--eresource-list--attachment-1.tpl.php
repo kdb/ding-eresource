@@ -3,39 +3,45 @@
  * @file
  * Override the output for the alphabetical index on the eresource page.
  *
+ * This is not really a template in the basic sense of the work, since
+ * we rely on theme_links to render the actual markup, but it's a neat
+ * way to override Views' standard rendering.
+ *
  * @ingroup views_templates
  */
 
-// If we're currently filtering on a letter, add an active class to that
-// letter's link.
+// Find the letter the View is currently filtered by, if any.
 if (!empty($view->original_args[1])) {
   $letter = drupal_strtoupper($view->original_args[1]); 
-  
-  foreach ($rows as $id => &$row) {
-    if ($row->link === $letter) {
-      if (isset($classes[$id])) {
-        $classes[$id] .= ' active';
-      }
-      else {
-        $classes[$id] = 'active';
-      }
-    }
-
-    // Remove availablility filter from URLs. 
-    if ($pos = strpos($row->url, '?availability')) {
-      $row->url = substr($row->url, 0, $pos);
-    }
-  }
 }
-?>
-<div class="item-list">
-  <ul class="views-summary">
-  <?php foreach ($rows as $id => $row): ?>
-    <li><a href="<?php print $row->url; ?>"<?php print !empty($classes[$id]) ? ' class="'. $classes[$id] .'"' : ''; ?>><?php print $row->link; ?></a>
-      <?php if (!empty($options['count'])): ?>
-        (<?php print $row->count?>)
-      <?php endif; ?>
-    </li>
-  <?php endforeach; ?>
-  </ul>
-</div>
+
+// Array of links to render.
+$links = array();
+
+foreach ($rows as $id => &$row) {
+  $link = array(
+    'title' => $row->link,
+    // Strip the initial / from the URL, since theme_links adds another
+    // while rendering.
+    'href' => ltrim($row->url, '/'),
+    'attributes' => array(
+      'class' => (isset($classes[$id])) ? $classes[$id] : '',
+    ),
+  );
+
+  // Remove availablility filter from URLs. 
+  if ($pos = strpos($link['href'], '?availability')) {
+    $link['href'] = substr($link['href'], 0, $pos);
+  }
+
+  // Add the active-class to the currently active letter.
+  if ($row->link === $letter) {
+    $link['attributes']['class'] .= ' active';
+  }
+
+  $links[$id] = $link;
+}
+
+if (!empty($links)) {
+  echo theme('links', $links, array('class' => 'eresource-alphabetical-index views-summary clearfix'));
+}

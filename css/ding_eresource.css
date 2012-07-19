@@ -20,40 +20,29 @@
 
 /** 
  * Alphabetical index
- *
- * I wish there was a way to make this styling more specific, but we
- * have no IDs to grab on to, nor no easy way of customising the markup.
  */
-.view-eresource-list .attachment-before .views-summary {
+.eresource-alphabetical-index {
   background-color: #aaa;
   clear: both;
   padding-left: 1em;
 }
 
-.view-eresource-list .attachment-before .views-summary li {
+.eresource-alphabetical-index li {
   background: none;
   float: left;
+  padding: 0;
 }
 
-.view-eresource-list .attachment-before .views-summary li a {
+.eresource-alphabetical-index li a {
   display: block;
   color: white;
   padding: 1px 4px;
 }
 
-.view-eresource-list .attachment-before .views-summary li a.active,
-.view-eresource-list .attachment-before .views-summary li a:hover {
+.eresource-alphabetical-index li a.active,
+.eresource-alphabetical-index li a:hover {
   background-color: white;
   color: #aaa;
   /* typography.css uses important, thus so must we. */
   text-decoration: none !important;
 }
-
-/** Since we can't put a clearfix class in there, lets define our
- ** summary to be one.
- */
-.view-eresource-list .attachment-before .views-summary:before,
-.view-eresource-list .attachment-before .views-summary:after { content:""; display:table; }
-.view-eresource-list .attachment-before .views-summary:after { clear:both; }
-/* For IE 6/7 (trigger hasLayout) */
-.view-eresource-list .attachment-before .views-summary { *zoom:1; }

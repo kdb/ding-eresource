@@ -11,8 +11,9 @@ function ding_eresource_user_default_permissions() {
     'name' => 'create eresource content',
     'roles' => array(
       '0' => 'Formidler',
-      '1' => 'redaktør (KDB)',
-      '2' => 'super-admin',
+      '1' => 'Formidlingskoordinator',
+      '2' => 'redaktør (KDB)',
+      '3' => 'super-admin',
     ),
   );
 
@@ -30,8 +31,9 @@ function ding_eresource_user_default_permissions() {
     'name' => 'delete own eresource content',
     'roles' => array(
       '0' => 'Formidler',
-      '1' => 'redaktør (KDB)',
-      '2' => 'super-admin',
+      '1' => 'Formidlingskoordinator',
+      '2' => 'redaktør (KDB)',
+      '3' => 'super-admin',
     ),
   );
 

@@ -75,3 +75,19 @@ function ding_eresource_update_6101() {
 
   return $ret;
 }
+
+/**
+ * Set sticky on eresource nodes to reflect out usage of weight.
+ *
+ * With weight.module, -100 represents a weight of 0;
+ */
+function ding_eresource_update_6102() {
+  $ret = array();
+
+  $ret[] = update_sql("
+    UPDATE {node} SET sticky = -100
+    WHERE type = 'eresource' AND sticky = 0
+  ");
+
+  return $ret;
+}

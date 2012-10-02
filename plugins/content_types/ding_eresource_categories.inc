@@ -7,7 +7,7 @@
 /**
  * Callback function to supply a list of content types.
  */
-function ding_eresource_categories_ctools_content_types() {
+function ding_eresource_ding_eresource_categories_ctools_content_types() {
   return array(
     'title' => t('Ding e-resource categories'),
     'description' => t('Provides a selector for e-resource categories.'),
@@ -19,7 +19,7 @@ function ding_eresource_categories_ctools_content_types() {
 /**
  * Return the pane contents.
  */
-function ding_eresource_categories_content_type_render($subtype, $conf, $panel_args, $context) {
+function ding_eresource_ding_eresource_categories_content_type_render($subtype, $conf, $panel_args, $context) {
   $block = new stdClass();
 
   if (isset($conf['vocabulary']) && $conf['vocabulary'] > 0) {
@@ -48,7 +48,7 @@ function ding_eresource_categories_content_type_render($subtype, $conf, $panel_a
 /**
  * Return the pane titles.
  */
-function ding_eresource_categories_content_type_admin_title($subtype, $conf, $context) {
+function ding_eresource_ding_eresource_categories_content_type_admin_title($subtype, $conf, $context) {
   return t('Ding e-resource categories');
 }
 
@@ -58,7 +58,7 @@ function ding_eresource_categories_content_type_admin_title($subtype, $conf, $co
  * We're not actually doing anything here, but we need to have this hook
  * for this content type to work.
  */
-function ding_eresource_categories_content_type_edit_form(&$form, &$form_state) {
+function ding_eresource_ding_eresource_categories_content_type_edit_form(&$form, &$form_state) {
   $vocabulary_options = array();
   foreach (taxonomy_get_vocabularies() as $voc) {
     $vocabulary_options[$voc->vid] = $voc->name;
@@ -78,6 +78,6 @@ function ding_eresource_categories_content_type_edit_form(&$form, &$form_state) 
 /**
  * Submit handler for the content type editing form.
  */
-function ding_eresource_categories_content_type_edit_form_submit(&$form, &$form_state) {
+function ding_eresource_ding_eresource_categories_content_type_edit_form_submit(&$form, &$form_state) {
   $form_state['conf']['vocabulary'] = $form_state['values']['vocabulary'];
 }

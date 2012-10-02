@@ -239,8 +239,8 @@ function ding_eresource_default_page_manager_pages() {
     $pane = new stdClass;
     $pane->pid = 'new-1';
     $pane->panel = 'left';
-    $pane->type = 'categories';
-    $pane->subtype = 'categories';
+    $pane->type = 'ding_eresource_categories';
+    $pane->subtype = 'ding_eresource_categories';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -314,6 +314,7 @@ function ding_eresource_default_page_manager_pages() {
   $display->title_pane = 'new-2';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
+
   $pages['eresources_overview'] = $page;
 
  return $pages;

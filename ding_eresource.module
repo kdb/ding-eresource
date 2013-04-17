@@ -123,7 +123,7 @@ function ding_eresource_views_pre_render(&$view) {
  */
 function ding_eresource_preprocess_node(&$vars) {
   // Link from the logo image to the resource.
-  if (isset($vars['field_list_image'][0]) && isset($vars['field_link'][0]['url'])) {
+  if (!empty($vars['field_list_image'][0]) && !empty($vars['field_link'][0]['url'])) {
     $vars['field_list_image'][0]['view'] = l(
       theme('imagecache', '120_120', $vars['field_list_image'][0]['filepath']),
       $vars['field_link'][0]['url'], array(
@@ -131,6 +131,7 @@ function ding_eresource_preprocess_node(&$vars) {
         'attributes' => array(
           'title' => t('Go to !eresource_name', array('!eresource_name' => ($vars['field_link'][0]['title']) ? $vars['field_link'][0]['title'] : $vars['node']->title)),
         ),
+        'query' => $vars['field_link'][0]['query'],
       )
     );
   }
